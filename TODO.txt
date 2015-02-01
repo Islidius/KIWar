@@ -1,0 +1,5 @@
+TODO
+
+	bugs with time delta frames
+	add player and server names
+	add better error detection for lua code
