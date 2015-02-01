@@ -1,0 +1,25 @@
+local x = math.random()*100-50
+local y = math.random()*100-50
+local targetid = 1
+
+function tick()
+	if myRobot:inLava() then
+		myRobot:useskill("teleport",Vector:new(math.random()*100-50,math.random()*100-50))
+	end
+
+	myRobot:moveto(Vector:new(x,y))
+
+	if math.abs(x-myRobot.pos:getX()) < 10 then
+		if math.abs(y-myRobot.pos:getY()) < 10 then
+			x = math.random()*100-50
+			y = math.random()*100-50
+		end
+	end
+
+	if RobotManager:getSize() > 0 then
+		target = RobotManager:getRandom()
+		if not target.dead then
+			myRobot:useskillat("rocket",target)
+		end
+	end
+end
