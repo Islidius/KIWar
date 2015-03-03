@@ -22,7 +22,7 @@ public class Main {
 	boolean rdyswitch = false;
 	
 	public Main(){
-		window = new Window(1920,1080);
+		window = new Window(Stats.get().width,Stats.get().height);
 		window.creatwindow();
 		
 		Render.get().initGl();
